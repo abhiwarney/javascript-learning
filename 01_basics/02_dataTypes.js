@@ -7,14 +7,21 @@ let emp = {"name":"abhi","age":16,"skill" : "java"}
 let bigIntExample = BigInt(42535364757588563334647586856985738573858333783758937957736985353)//used for storing bigINt value > 2^53
 let bigIntSHortExample = 435464736374758574558585855n//'n' at the end automatically makes it a bigInt
 
+const myFunction = function(){
+    console.log("this is function body")
+}
+
+console.log(typeof myFunction) //this will return 'function' but called function object
+
+console.log(typeof emp)//returns object
 //symbol
 const id_01 = Symbol('123')
 const id_02 = Symbol('123')
 
-console.log("\nid_01 :",id_01,"id_02 :",id_02,"id_01 == id_02",id_01==id_02)
+//console.log("\nid_01 :",id_01,"id_02 :",id_02,"id_01 == id_02",id_01==id_02)
 
-console.log(emp)
-console.log(bigIntExample,"typeof :",typeof bigIntExample)
+//console.log(emp)
+//console.log(bigIntExample,"typeof :",typeof bigIntExample)
 //bigint => for big integer values > 2^53
 //undefined => a datatype
 //null => a standalone value
@@ -25,4 +32,4 @@ console.log(bigIntExample,"typeof :",typeof bigIntExample)
 
 // console.log(typeof undefined) // output is 'undefined' type
 // console.log(typeof null) // output is 'object' type 
-console.log(typeof emp)
+
