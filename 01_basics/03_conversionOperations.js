@@ -1,12 +1,13 @@
-let aNumber = true //undefined|null
+let aNumber = NaN //undefined|null
 
 let stringNUmber = String(aNumber) //converting to string
 
-//console.table([stringNUmber,typeof stringNUmber]); 
+console.table([stringNUmber,typeof stringNUmber]); 
 //if input = 33 , type string , value '33'
 //if input = undefined , type is string , value 'undefined'
 //input = true, type is string, value 'true'
 //input = null , type string, value 'null'
+//input = NaN , type string, value 'NaN'
 
 let aString = "34"
 let numberString = Number(aString)
@@ -22,7 +23,7 @@ let numberString = Number(aString)
 let aValue = NaN
 let toBoolean = Boolean(aValue)
 
-console.table([toBoolean,typeof toBoolean])
+//console.table([toBoolean,typeof toBoolean])
 //input = 1, output = true , type 'boolean'
 //input = 0 , ouput = false , type  'boolean'
 //input = "dafwef" output = true , type 'boolean'
