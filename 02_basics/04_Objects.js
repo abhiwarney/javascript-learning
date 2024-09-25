@@ -57,8 +57,25 @@ const obj7 = {...obj2,...obj3} //this simply returns new object
 //console.log(obj7)
 
 //varipuse function available
-console.log(Object.keys(obj2))// results in array of all the keys inside obj  | output: [ '1', '2' ]
-console.log(Object.values(obj2)) // results in array of values | outptut : [ 'a', 'b' ]
-console.log(Object.entries(obj2)) // results in key value pair inside array of array | output : [ [ '1', 'a' ], [ '2', 'b' ] ]
-console.log(obj1.hasOwnProperty("idf")) //check if property is present in the object
-console.log(obj1.name?.fullName.firstName) //?. (optional chaining) is used if prpeerty is undefined or null then return undefined instead of throwing error
+// console.log(Object.keys(obj2))// results in array of all the keys inside obj  | output: [ '1', '2' ]
+// console.log(Object.values(obj2)) // results in array of values | outptut : [ 'a', 'b' ]
+// console.log(Object.entries(obj2)) // results in key value pair inside array of array | output : [ [ '1', 'a' ], [ '2', 'b' ] ]
+// console.log(obj1.hasOwnProperty("idf")) //check if property is present in the object
+// console.log(obj1.name?.fullName.firstName) //?. (optional chaining) is used if prpeerty is undefined or null then return undefined instead of throwing error
+
+// oBject destructring in javascript
+//destructuring is used when we have to access properties from an object without having to write biler code
+
+const sampelObj = {
+    name: "abhinav",
+    age : 26,
+    email: "abhiwarney@gmail.com"
+}
+
+const {email} = sampelObj //her{email} is directly used instead of writing 'email = sampleObj.email'
+console.log(email)
+//use can add aliad as well
+const {name : userName} = sampelObj
+//this is usefull when requesting apis and , then destructing the json object
+//To-Do explore this destructing more 
+console.log(userName)
