@@ -71,3 +71,5 @@ const anArr = ["firstELement index [0]","SecondElement index [1]"]
 console.log("array demo:",arrayacceptor(anArr)) //or we can pass array directly in args like
 
 console.log(arrayacceptor([0,1,2,43]))
+
+console.log("random")
