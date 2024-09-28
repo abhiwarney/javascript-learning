@@ -41,6 +41,8 @@ const anObject = {};
 if (Object.keys(anObject).length === 0)
   console.log("object is an empty object");
 
+
+//--------------------------------------------important----------------------------------------
 //Nullish Coalescing operator '??' : null, undefined
 
 //this operator is used to do a safety check on null and undefined values to prevent our code to break
