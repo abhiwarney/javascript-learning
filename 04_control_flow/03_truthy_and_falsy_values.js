@@ -70,4 +70,10 @@ const evaluation = value1 ?? value2 ?? 12
  
 console.log(evaluation);
 
- 
+ //-------------------------------------Ternanry-operator ? :----------------------------------------
+ //nothing special here same as java
+ //example
+
+ const num = 100
+
+ num >= 50 ? console.log("num is >= 50") : console.log("num is < 50") 
