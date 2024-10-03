@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check Key Pressed</title>
+    <style>
+        .display-box {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+      }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div class="display-box">
+        <div id="insert">
+            <div id="key">Press the key</div>
+        </div>
+    </div>
+</body>
+<script>
+    const insert = document.querySelector('#insert')
+
+    //pressKey.addEventListener('onkeypress',onPress)
+window.addEventListener('keydown',onPress)
+
+
+    function onPress(e){
+        let key = (e.key).toUpperCase()
+        insert.innerHTML=`<div style="border:2px solid white;width: 200px;height:80px"><h1>${key}</h1></div>`
+        //console.log(e.key)
+    }
+    
+</script>
+</html>

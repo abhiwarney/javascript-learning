@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .display-box {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            display: flex;
+            width: 600px;
+            height: 300px;
+        }
+
+        table,tr,td {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="display-box">
+        <div class="card">
+            
+
+            <h1>this is my card</h1>
+        </div>
+    </div>
+</body>
+<script>
+    const myGitUrl = 'https://api.github.com/users/abhiwarney'
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
+
+        if (xhr.readyState === 4) {
+            const response = JSON.parse(xhr.responseText)
+            console.log(response)
+            generateCard(response)
+        }
+
+        function generateCard(response) {
+            const card = document.querySelector('.card')
+            card.innerHTML = `<table><tr>
+                <td>Name:</td>
+                <td>${response.name}</td>
+                <td><img src="${response.avatar_url}" width="100px" height="80px"></td>
+            </tr>
+            <tr>
+                <td>followers:</td>
+                <td>${response.followers}</td>
+                <td>Username:</td>
+                <td>${response.login}</td>
+            </tr></table>`
+        }
+    }
+    xhr.open('GET', myGitUrl)
+    xhr.send()
+
+</script>
+
+</html>

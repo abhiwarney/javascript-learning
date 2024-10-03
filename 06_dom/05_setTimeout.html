@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout() demo</title>
+</head>
+<body>
+    <h1>Hello ABHINAV warney</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const changeHeading= setTimeout(function(){
+        document.querySelector('h1').innerHTML="This is chnaged Heading !!!!!"
+        //console.log(`This is chnaged Heading !!!!!`)
+    },2000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        console.log("STOP Activated");
+        
+        clearTimeout(changeHeading)
+    })
+
+    /* 
+    setTimeout() is an api used to execute an function after some particular interval , provide in milliseconds, this function is available in webAPI, or node runtime but not in js engine,
+    so js engine tell the web/node to invoke the function which then puts the callback in the taskqueue to invoke it by again telling the js engine, this way js engine becomes faster, 
+    as js alone is single threaded and sync, therfore it needs optimisation and its usually done using collective runtime environment
+
+    explore further about event loop in node
+
+    clearTimeout() is used to stop the setTimeout() callback , that it clears the calledcak from the taskqueue 
+    */
+</script>
+</html>

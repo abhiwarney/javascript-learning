@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM demo</title>
+    <style>
+        .container {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+    <script>
+        function displayR(){
+            return "<div><h1>Welcome Bullas</h1></div>"
+        }
+    </script>
+</head>
+
+<body class="container">
+    <div>
+        <h1 id="title" class="heading">welcome to DOM manipulation <span style="display: none;">Test Text</span></h1>
+        <p>This is DOM manipulation demos</p>
+        <p>This is second para</p>
+        <p>enter password <input type="password"></p>
+    </div>
+    <div>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+
+
+<!--
+
+//DOM
+1. get element by id : document.getElementById('title')
+2. get attributes of the element : document.getElementById('title').getAttribute('class')
+3. get element by class : document.getElementsByClassName('heading')
+4. get Elements By Tag Name : document.getElementsByTagName('h1')
+5. get element by name : document.getElementByName()
+
+now store the element in  a variable
+
+const title = document.getElementById('title')
+
+//apply operation like class
+
+title.style.backgrounfColor="green"
+title.style.padding="10px"
+title.style.borderRadius="10px"
+
+----------------------------------
+diff btw, innerHTML, innerText, textContent
+innerHTML -> title.innerHTML
+output : "welcome to DOM manipulation <span style="display: none;">Test Text</span>"
+
+innerText -> title.innerText
+output :'welcome to DOM manipulation'
+
+textContent -> title.textContent
+output :'welcome to DOM manipulation'
+------------------------------------
+--------QuerSelector------------------
+documetn.querySelector(<css selectors>)
+    this makes accessing element easy, by direclty passing the selector in the argument , it will return the Elements
+Example:
+1. for id sleector :  document.querySelector('#title')
+2. for class Selector : document.querySelector('.heading')
+3. for tag  : document.querySelector('p') // this will return the first occurence of the tag
+4. using input type : document.querySelector('input[type="password"]')
+-------------------------querySelectorAll()---------------
+this is same as querySelector but returns all the elements rather than the first occurence of element, in the form of a nodeList,
+which is an array but not pure js arrray, it supports forEach funct but not other map, reduce funcs, for firther infor look at the prototype and get properties there
+
+syntax:
+const liList = document.querySelectorAll('li')
+liList will give the nodeList
+liList[1].style.color="yellow" //this way u can manipulate it
+
+
+-------------------------------------------------------------
+if try to get same li elements through getElementByClassName()  it will return an HTML Collection, it is diff from nodelist
+
+syntax: ocument.getElementsByClassName('list-item')
+output: HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+not htmlCollection doesn't offer nay forEach like function, so how to iterate it?
+the answer is, we can convert this htmlCollection to an array, and it opens all the functions applicable on an array
+
+const extractedList = document.getElementsByClassName('list-item')
+const convertedList = Array.from(extractedList)
+
+now we can see all option for array are available
+
+same way we can convert a nodelist into an array
+>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval() Api demo</title>
+</head>
+
+<body>
+    <h1>Default Header</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    /* 
+    setInterval() is is diff from setTimeout() as it keeps invoking the callback for the interval passed in thte argument
+    syntax ; setInterval(<callback/handler> function(){},<interval in millisecond> 10000,<this is optional string you can pass>"Hello Hi Hi") */
+   
+ 
+
+//way to genreate random hex, imp
+
+const randomColor = function(){
+   const hex = '0123456789ABCDEF'
+   let color = '#'
+   for(let i = 0 ; i < 6 ; i++){
+    color += hex[Math.floor(Math.random()*16)]
+   } 
+   return color;
+}
+
+    let invokeInterval;
+    let count = 0
+    document.querySelector('#start').addEventListener('click', function () {
+        if(!invokeInterval){
+        invokeInterval = setInterval(changeHead, 1000)
+        }
+
+        function changeHead() {
+        document.querySelector('h1').innerHTML=`change [${count++}]`
+        console.log(randomColor());
+        document.body.style.backgroundColor = `${randomColor()}`
+        //console.log("hello", Date());
+    }
+    })
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(invokeInterval)
+        invokeInterval = null
+    })
+
+
+</script>
+
+</html>

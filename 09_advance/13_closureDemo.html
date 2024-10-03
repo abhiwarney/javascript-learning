@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Demo</title>
+</head>
+
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    //lets change the bg color using button
+
+    /* document.getElementById('orange').onclick = function(){
+        document.body.style.backgroundColor = 'orange'
+    }
+
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor = 'green'
+    } */
+    //now this was fine until we have only two button, but what if we have 100's of buttons , 
+    //are we going to do it like same way, or we can define a function to change the color
+
+    /* document.getElementById('orange').onclick = changeBgColorHandler('orange')
+
+    document.getElementById('green').onclick = changeBgColorHandler('green')
+
+    function changeBgColorHandler(color) {
+        document.body.style.backgroundColor = `${color}`
+    } */
+
+    //but this approach is  not working, it is directly changing the bg color, instead of waiting to click on buttin then on event changing color
+
+    //so what should we do?, we need closure here, we need to pass the lexical scope of the function so as to pass the context
+
+    document.getElementById('orange').onclick = changeBgColorHandler('orange')
+
+    document.getElementById('green').onclick = changeBgColorHandler('green')
+
+    function changeBgColorHandler(color) {
+        return function() {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+//now we are getting the expected output
+</script>
+
+</html>

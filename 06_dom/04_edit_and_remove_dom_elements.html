@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove DOM Elements</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div>
+        <button onclick="removelastNode()">Remove Last List Item</button>
+    </div> 
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(input){
+        const li = document.createElement('li')
+        li.innerText = input
+        document.querySelector('.language').appendChild(li)
+}
+addLang('java')
+addLang('Scala')
+//optimised function
+function addOptiLang(input){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(input))
+    document.querySelector('.language').appendChild(li)
+}
+addOptiLang('golang')
+
+
+//edit the element, or replcaing a child Node using replaceWith()
+function replaceLang(node,newLang){
+    const existNode = document.querySelector(`li:nth-child(${node})`)
+    const newNode = document.createElement('li')
+    newNode.textContent=newLang
+    newNode.style.bastyle="color: black;"
+    newNode.style.color='yellow'
+
+    existNode.replaceWith(newNode)
+}
+
+replaceLang(2,'DotNet')
+
+//remove node
+function removelastNode(){
+const rNode= document.querySelector('li:last-child')
+rNode.remove()
+}
+
+</script>
+</html>
